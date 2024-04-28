@@ -5,8 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Nikita Nossenko
+ * Testiluokka KiviPaperiSakset-pelin toiminnallisuuden testaamiseen.
+ */
 public class KpsTest {
 
+    /**
+     * Testi aloitaPeli-metodille positiivisilla kierroksilla.
+     */
     @Test
     public void testAloitaPeli() {
         assertDoesNotThrow(() -> {
@@ -15,6 +22,9 @@ public class KpsTest {
         });
     }
 
+    /**
+     * Testi aloitaPeli-metodille negatiivisilla kierroksilla.
+     */
     @Test
     public void testAloitaPeliNegatiivisillaKierroksilla() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -23,6 +33,9 @@ public class KpsTest {
         });
     }
 
+    /**
+     * Testi aloitaPeli-metodille tyhjällä nimellä.
+     */
     @Test
     public void testAloitaPeliTyhjallaNimella() {
         assertThrows(IllegalArgumentException.class, () -> {
