@@ -16,6 +16,9 @@ public class KiviPaperiSakset {
      * @param rounds Pelattavien kierrosten määrä.
      */
     private void pelaaPeli(Pelaaja p1, Pelaaja p2, int rounds) {
+        if (rounds < 0) {
+            throw new IllegalArgumentException("Kierrosten määrä ei voi olla negatiivinen");
+        }
         boolean peliLoppu = false;
         int pelattu = 0;
         int tasapelienmaara = 0;

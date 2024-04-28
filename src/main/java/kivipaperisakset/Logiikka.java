@@ -25,6 +25,9 @@ public class Logiikka {
      * @return Voittajan indeksi: 0 tasapeli, 1 pelaaja 1 voittaa, -1 pelaaja 2 voittaa.
      */
     public static int tarkistaVoittaja(String valinta1, String valinta2) {
+        if (valinta1 == null || valinta1.trim().isEmpty() || valinta2 == null || valinta2.trim().isEmpty()) {
+            throw new IllegalArgumentException("Pelaajan valinta ei voi olla tyhjä");
+        }
         if (valinta1.equals(valinta2)) {
             return 0;
         } else if ((valinta1.equals("Kivi") && valinta2.equals("Sakset")) ||

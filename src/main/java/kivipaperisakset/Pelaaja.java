@@ -17,6 +17,9 @@ public class Pelaaja {
      * @param nimi Pelaajan nimi
      */
     public Pelaaja(String nimi) {
+        if (nimi == null || nimi.trim().isEmpty()) {
+            throw new IllegalArgumentException("Pelaajan nimi ei voi olla tyhjä");
+        }
         this.nimi = nimi;
         this.pelit = 0;
         this.voitot = 0;
